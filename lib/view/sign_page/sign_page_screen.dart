@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'dart:ui';
 
@@ -35,7 +35,7 @@ class _SignPageScreenState extends State<SignPageScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -73,36 +73,14 @@ class _SignPageScreenState extends State<SignPageScreen> {
                   ),
                   SizedBox(
                     height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: StartingPageColor.customBlack,
-                            ),
-                          ),
-                        ),
-                       
-                        // SizedBox(
-                        //   width: 10,
-                        // ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Register",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              color: StartingPageColor.customBlack,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
                   ),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height,
+                    //width: MediaQuery.sizeOf(context).width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.purpleAccent),
+                  )
                 ],
               ),
             ),
