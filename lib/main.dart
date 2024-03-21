@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bridal_app_project/view/sign_page/widgets/forgot_password.dart';
 import 'package:bridal_app_project/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
