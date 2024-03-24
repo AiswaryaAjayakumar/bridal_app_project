@@ -24,7 +24,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               child: Image.asset(
                 "assets/images/warning.png",
                 scale: 8,
-                color: StartingPageColor.customRed,
+                color: StartingColor.customRed,
               ),
             ),
             SizedBox(
@@ -33,7 +33,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             Text(
               "Enter your Email and we'll send you a link to reset your password.",
               style: TextStyle(
-                color: StartingPageColor.customGrey,
+                color: StartingColor.customGrey,
               ),
             ),
             SizedBox(
@@ -54,12 +54,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: StartingPageColor.customGren),
+                  color: StartingColor.customGreen),
               child: Center(
                   child: Text(
                 "SUBMIT",
                 style: TextStyle(
-                    color: StartingPageColor.customWhite,
+                    color: StartingColor.customWhite,
                     fontSize: 30,
                     fontWeight: FontWeight.w500),
               )),
@@ -77,11 +77,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 children: [
                   Icon(
                     Icons.chevron_left,
-                    color: StartingPageColor.customPurple,
+                    color: StartingColor.customPurple,
                   ),
                   Text(
                     "Back to Login",
-                    style: TextStyle(color: StartingPageColor.customPurple),
+                    style: TextStyle(color: StartingColor.customPurple),
                   )
                 ],
               ),

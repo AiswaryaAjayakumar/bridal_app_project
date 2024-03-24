@@ -3,11 +3,11 @@
 import 'dart:async';
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
-import 'package:bridal_app_project/view/home_screen/home_screen.dart';
+
 import 'package:bridal_app_project/view/sign_page/sign_page_screen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -32,22 +32,52 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          height: MediaQuery.sizeOf(context).height,
-          width: MediaQuery.sizeOf(context).width,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/brides.jpeg"),
-                fit: BoxFit.cover),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 193, 228, 233),
+            Color.fromARGB(255, 146, 234, 218),
+            Color.fromARGB(255, 14, 130, 145),
+            const Color.fromARGB(255, 8, 150, 136)
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        )),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Lottie.asset(
+                'assets/images/Animation - 1710698501670.json',
+                width: 300,
+                height: 200,
+                fit: BoxFit.fill,
+              ),
+              Text(
+                "ZAUM",
+                style: TextStyle(
+                    fontFamily: "ArtographieLight",
+                    fontSize: 40,
+                    color: StartingColor.customPurple),
+              ),
+              Text(
+                "Celebrate Love In Style",
+                style: TextStyle(
+                    fontFamily: "Milonga-Regular",
+                    fontSize: 20,
+                    color: StartingColor.customWhite),
+              ),
+              Positioned(
+                  left: 50,
+                  right: 50,
+                  bottom: 80,
+                  child: Lottie.asset(
+                      'assets/images/Animation - 1710862479264.json')),
+            ],
           ),
         ),
-        Positioned(
-            left: 50,
-            right: 50,
-            bottom: 80,
-            child: Lottie.asset('assets/images/Animation - 1710862479264.json'))
-      ]),
+      ),
     );
   }
 }
