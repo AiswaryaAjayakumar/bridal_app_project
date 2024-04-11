@@ -1,4 +1,4 @@
-package com.example.bridal_app_project
+package com.luminartechnolab.zaum
 
 import io.flutter.embedding.android.FlutterActivity
 

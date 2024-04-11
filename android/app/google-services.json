@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "999926212130",
+    "project_id": "zaum-674a0",
+    "storage_bucket": "zaum-674a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999926212130:android:d9546040b5b2e396648c7b",
+        "android_client_info": {
+          "package_name": "com.luminartechnolab.zaum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3lbvLHjdHUrVj1VSmgOUMm4yDIkDJaGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
