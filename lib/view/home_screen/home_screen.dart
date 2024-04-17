@@ -6,7 +6,7 @@ import 'package:bridal_app_project/view/home_screen/widgets/location_screen.dart
 import 'package:bridal_app_project/view/home_screen/widgets/search_item_screen.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

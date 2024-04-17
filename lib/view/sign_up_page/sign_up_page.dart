@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, use_build_context_synchronously, unrelated_type_equality_checks
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, use_build_context_synchronously, unrelated_type_equality_checks, avoid_print
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/sign_page/sign_page_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -21,8 +20,10 @@ class _SignUpState extends State<SignUp> {
   TextEditingController uMob = TextEditingController();
   TextEditingController uPass = TextEditingController();
   TextEditingController uConPass = TextEditingController();
+  CollectionReference collectionReference =
+      FirebaseFirestore.instance.collection("users");
 
-  final _formKey = GlobalKey<FormFieldState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,7 @@ class _SignUpState extends State<SignUp> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10))),
                     validator: (value) {
-                      if (value != null) {
+                      if (value != null && value.length >= 7) {
                         return null;
                       } else {
                         return "Mobile number is required";
@@ -131,7 +132,7 @@ class _SignUpState extends State<SignUp> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10))),
                     validator: (value) {
-                      if (value != null && value == uPass) {
+                      if (value != null && value == uPass.text) {
                         return null;
                       } else {
                         return "Password is not match";
@@ -143,10 +144,53 @@ class _SignUpState extends State<SignUp> {
                   ),
                   GestureDetector(
                     onTap: () async {
-                      // if (_formKey.currentState!.validate()) {
-                      //   final cred = FirebaseAuth.instance
-                      //       .createUserWithEmailAndPassword(
-                      //           email: uMail.text, password: uConPass.text);
+                      if (_formKey.currentState!.validate()) {
+                        try {
+                          final cred = await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: uMail.text, password: uPass.text);
+                          if (cred.user?.uid != null) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignPageScreen(),
+                                ));
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text(
+                                  "Failed to create account!! Try again.."),
+                              backgroundColor: StartingColor.customRed,
+                            ));
+                          }
+                        } on FirebaseAuthException catch (e) {
+                          if (e.code == 'weak-password') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("The password is too weak.."),
+                              backgroundColor: StartingColor.customRed,
+                            ));
+                          } else if (e.code == 'email-already-in-use') {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("The account is already used"),
+                              backgroundColor: StartingColor.customRed,
+                            ));
+                          }
+                        } catch (e) {
+                          print(e);
+                        }
+                      }
+
+                      // SharedPreferences prefs =
+                      //     await SharedPreferences.getInstance();
+                      // if (uName.text.isNotEmpty &&
+                      //     uMail.text.isNotEmpty &&
+                      //     uMob.text.isNotEmpty &&
+                      //     uPass.text.isNotEmpty &&
+                      //     uConPass.text.isNotEmpty) {
+                      //   prefs.setString("username", uName.text);
+                      //   prefs.setString("email", uMail.text);
+                      //   prefs.setString("mobile", uMob.text);
+                      //   prefs.setString("pass", uPass.text);
+                      //   prefs.setString("confpass", uConPass.text);
                       //   Navigator.pushReplacement(
                       //       context,
                       //       MaterialPageRoute(
@@ -154,34 +198,10 @@ class _SignUpState extends State<SignUp> {
                       //       ));
                       // } else {
                       //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      //     content: Text("All datas are required"),
+                      //     content: Text("All data are required"),
                       //     backgroundColor: StartingColor.customRed,
                       //   ));
                       // }
-
-                      SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      if (uName.text.isNotEmpty &&
-                          uMail.text.isNotEmpty &&
-                          uMob.text.isNotEmpty &&
-                          uPass.text.isNotEmpty &&
-                          uConPass.text.isNotEmpty) {
-                        prefs.setString("username", uName.text);
-                        prefs.setString("email", uMail.text);
-                        prefs.setString("mobile", uMob.text);
-                        prefs.setString("pass", uPass.text);
-                        prefs.setString("confpass", uConPass.text);
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignPageScreen(),
-                            ));
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("All data are required"),
-                          backgroundColor: StartingColor.customRed,
-                        ));
-                      }
                     },
                     child: Container(
                       height: 55,

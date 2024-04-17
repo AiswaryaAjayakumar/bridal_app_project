@@ -28,8 +28,8 @@ class _BottomNavState extends State<BottomNav> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/images/type-on-path.png")),
-            label: "Type",
+            icon: ImageIcon(AssetImage("assets/images/shapes.png")),
+            label: "Category",
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/images/profile.png")),

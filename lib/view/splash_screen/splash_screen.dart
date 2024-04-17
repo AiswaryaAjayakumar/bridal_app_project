@@ -68,12 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     fontSize: 20,
                     color: StartingColor.customWhite),
               ),
-              Positioned(
-                  left: 50,
-                  right: 50,
-                  bottom: 80,
-                  child: Lottie.asset(
-                      'assets/images/Animation - 1710862479264.json')),
+              Lottie.asset('assets/images/Animation - 1710862479264.json'),
             ],
           ),
         ),

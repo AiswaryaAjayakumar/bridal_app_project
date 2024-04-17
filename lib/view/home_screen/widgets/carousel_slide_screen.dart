@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +32,7 @@ class _CarouselSlideScreenState extends State<CarouselSlideScreen> {
           )
         ],
         options: CarouselOptions(
-          height: 200,
+          height: 250,
           aspectRatio: 16 / 9,
           viewportFraction: 1,
           initialPage: 0,
