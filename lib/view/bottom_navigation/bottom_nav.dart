@@ -29,7 +29,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/images/shapes.png")),
-            label: "Category",
+            label: "Categories",
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage("assets/images/profile.png")),
