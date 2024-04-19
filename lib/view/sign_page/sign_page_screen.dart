@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
-import 'package:bridal_app_project/view/home_screen/home_screen.dart';
+
 
 import 'package:bridal_app_project/view/sign_page/widgets/forgot_password.dart';
 import 'package:bridal_app_project/view/sign_up_page/sign_up_page.dart';
@@ -24,10 +24,11 @@ class _SignPageScreenState extends State<SignPageScreen> {
   TextEditingController mail = TextEditingController();
   TextEditingController pass = TextEditingController();
   bool isChecked = false;
-  final _formKey = GlobalKey<FormState>();
 
   CollectionReference collectionReference =
       FirebaseFirestore.instance.collection("users");
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

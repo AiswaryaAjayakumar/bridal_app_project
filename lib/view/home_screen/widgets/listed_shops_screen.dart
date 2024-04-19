@@ -12,6 +12,8 @@ class ListedShopsScreen extends StatefulWidget {
 }
 
 class _ListedShopsScreenState extends State<ListedShopsScreen> {
+  // int selectedIndex = 0;
+  // List pages = [];
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -24,6 +26,12 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                     MaterialPageRoute(
                       builder: (context) => Selected_Tex(),
                     ));
+
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => Selected_Tex(),
+                //     ));
               },
               child: Container(
                 height: 230,

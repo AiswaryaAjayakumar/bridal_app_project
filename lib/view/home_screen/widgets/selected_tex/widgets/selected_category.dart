@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bridal_app_project/utils/image_constants.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/custom_filters_show_model_bottom.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/detailed_dress.dart';
@@ -109,10 +110,10 @@ class _SelectedcategoryState extends State<Selectedcategory> {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
-            itemCount: 8,
+            itemCount: ImageConstants.detailsImage.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 15,
-                mainAxisExtent: 350,
+                mainAxisExtent: 380,
                 crossAxisSpacing: 15,
                 crossAxisCount: 2),
             itemBuilder: (context, index) => InkWell(
@@ -120,7 +121,18 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DetailedDress(),
+                      builder: (context) => DetailedDress(
+                        img: ImageConstants.detailsImage[index]["img"]
+                            .toString(),
+                        name: ImageConstants.detailsImage[index]["name"]
+                            .toString(),
+                        price: ImageConstants.detailsImage[index]["price"]
+                            .toString(),
+                        des: ImageConstants.detailsImage[index]["des"]
+                            .toString(),
+                        left: ImageConstants.detailsImage[index]["left"]
+                            .toString(),
+                      ),
                     ));
               },
               child: Container(
@@ -151,18 +163,39 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                         maxHeight: 100,
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image(
                             image: NetworkImage(
-                                "https://seematti.com/wp-content/uploads/2024/04/13568260-5.jpg"),
+                                ImageConstants.detailsImage[index]["img"]),
                             fit: BoxFit.cover,
                           ),
                           SizedBox(
                             height: 20,
                           ),
-                          Center(child: Text("Navy blue")),
-                          Center(child: Text("Navy blue")),
-                          Center(child: Text("Navy blue")),
+                          Center(
+                              child: Text(
+                            ImageConstants.detailsImage[index]["name"],
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          )),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.currency_rupee,
+                                size: 17,
+                              ),
+                              Text(
+                                ImageConstants.detailsImage[index]["price"]
+                                    .toString(),
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
                         ],
                       )),
                 ),

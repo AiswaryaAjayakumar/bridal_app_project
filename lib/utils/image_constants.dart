@@ -38,4 +38,41 @@ class ImageConstants {
       "name": "Tissue Silk\nsarees"
     },
   ];
+  static List<Map> detailsImage = [
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568260-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": 4577,
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568261-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": 4577,
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568259-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": 4577,
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568263-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": 4577,
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": 4577,
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+  ];
 }
