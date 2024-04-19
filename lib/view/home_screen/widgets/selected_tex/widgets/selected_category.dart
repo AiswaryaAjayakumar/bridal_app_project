@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/custom_filters_show_model_bottom.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/detailed_dress.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class Selectedcategory extends StatefulWidget {
   const Selectedcategory({super.key});
@@ -13,6 +17,91 @@ class _SelectedcategoryState extends State<Selectedcategory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 40,
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {},
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.price_change,
+                      color: StartingColor.customWhite,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "PRICE",
+                      style: TextStyle(color: StartingColor.customWhite),
+                    ),
+                  ],
+                ),
+              ),
+              VerticalDivider(),
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    elevation: 10,
+                    context: context,
+                    builder: (context) => CustomFiltersShowModelBottom(),
+                  );
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.filter_list,
+                      color: StartingColor.customWhite,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "FILTERS",
+                      style: TextStyle(color: StartingColor.customWhite),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        actions: [
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "assets/images/alert.png",
+                    color: StartingColor.customPurple,
+                    scale: 25,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "assets/images/favorite.png",
+                    color: StartingColor.customPurple,
+                    scale: 25,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "assets/images/shopping-bag (1).png",
+                    color: StartingColor.customPurple,
+                    scale: 25,
+                  )),
+            ],
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(children: [
           GridView.builder(
@@ -27,7 +116,13 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                 crossAxisSpacing: 15,
                 crossAxisCount: 2),
             itemBuilder: (context, index) => InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailedDress(),
+                    ));
+              },
               child: Container(
                 decoration: BoxDecoration(
                   // image: DecorationImage(
@@ -37,6 +132,7 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
+                      color: const Color.fromARGB(97, 206, 203, 203),
                       blurRadius: 90,
                     ),
                   ],
