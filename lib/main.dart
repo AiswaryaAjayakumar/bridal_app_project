@@ -35,7 +35,7 @@ class BridalApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: BottomNav(),
       ),
     );
   }

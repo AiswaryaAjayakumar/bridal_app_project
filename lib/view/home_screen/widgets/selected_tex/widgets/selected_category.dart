@@ -144,7 +144,7 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color.fromARGB(97, 206, 203, 203),
+                      color: Color.fromARGB(96, 77, 75, 75),
                       blurRadius: 90,
                     ),
                   ],
@@ -163,7 +163,6 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                         maxHeight: 100,
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image(
                             image: NetworkImage(
@@ -173,28 +172,37 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                           SizedBox(
                             height: 20,
                           ),
-                          Center(
-                              child: Text(
-                            ImageConstants.detailsImage[index]["name"],
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.currency_rupee,
-                                size: 17,
-                              ),
-                              Text(
-                                ImageConstants.detailsImage[index]["price"]
-                                    .toString(),
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w500),
-                              ),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Column(
+                              children: [
+                                Text(
+                                  ImageConstants.detailsImage[index]["name"],
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.currency_rupee,
+                                      size: 17,
+                                    ),
+                                    Text(
+                                      ImageConstants.detailsImage[index]
+                                              ["price"]
+                                          .toString(),
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       )),

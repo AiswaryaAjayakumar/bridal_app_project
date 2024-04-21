@@ -27,6 +27,16 @@ class _Selected_TexState extends State<Selected_Tex> {
       body: SafeArea(
         child: CustomScrollView(slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
+            leading: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              child: CircleAvatar(
+                radius: 25,
+                backgroundImage: NetworkImage(
+                    "https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/2f/ce/25/2fce2506-bdc0-9721-64c3-1a789a04a11a/source/512x512bb.jpg"),
+              ),
+            ),
+
             floating: true,
             //backgroundColor: Colors.amber,
             flexibleSpace: FlexibleSpaceBar(
@@ -48,23 +58,6 @@ class _Selected_TexState extends State<Selected_Tex> {
             //       fontSize: 50,
             //       fontFamily: "OoohBaby-Regular"),
             // ),
-            actions: [
-              DropdownButton(
-                items: [
-                  DropdownMenuItem(
-                    value: "1",
-                    child: Text("hello"),
-                  ),
-                  DropdownMenuItem(value: "2", child: Text("Hi"))
-                ],
-                onChanged: (value) {},
-              )
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: Icon(Icons.menu),
-              //   color: StartingColor.customPurple,
-              // ),
-            ],
           ),
           SliverToBoxAdapter(
             child: CarouselSlideScreen(),

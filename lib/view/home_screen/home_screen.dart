@@ -4,6 +4,7 @@ import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_co
 import 'package:bridal_app_project/view/home_screen/widgets/listed_shops_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/location_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/search_item_screen.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           scale: 25,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CartScreen(),
+                              ));
+                        },
                         icon: Image.asset(
                           "assets/images/shopping-bag (1).png",
                           color: StartingColor.customPurple,
