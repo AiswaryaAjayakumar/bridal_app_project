@@ -2,18 +2,22 @@
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+import 'package:flutter_add_to_cart_button/flutter_add_to_cart_button.dart';
+
+import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 
 class DetailedDress extends StatefulWidget {
-  DetailedDress(
-      {super.key,
-      required this.img,
-      required this.name,
-      required this.price,
-      required this.des,
-      required this.left});
+  DetailedDress({
+    super.key,
+    required this.img,
+    required this.name,
+    required this.price,
+    required this.des,
+    required this.left,
+  });
   final String img;
   final String name;
   final String price;
@@ -25,11 +29,15 @@ class DetailedDress extends StatefulWidget {
 }
 
 class _DetailedDressState extends State<DetailedDress> {
+  AddToCartButtonStateId stateId = AddToCartButtonStateId.idle;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -62,19 +70,42 @@ class _DetailedDressState extends State<DetailedDress> {
                               color: StartingColor.customPurple,
                               scale: 25,
                             )),
-                        IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => CartScreen(),
-                                  ));
-                            },
-                            icon: Image.asset(
-                              "assets/images/shopping-bag (1).png",
-                              color: StartingColor.customPurple,
-                              scale: 25,
-                            )),
+                        Stack(children: [
+                          IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CartScreen(),
+                                    ));
+                              },
+                              icon: Image.asset(
+                                "assets/images/shopping-bag (1).png",
+                                color: StartingColor.customPurple,
+                                scale: 25,
+                              )),
+                          Positioned(
+                            top: 0,
+                            left: 12,
+                            bottom: 14,
+                            child: PersistentShoppingCart()
+                                .showCartItemCountWidget(
+                              cartItemCountWidgetBuilder: (itemCount) =>
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CartScreen(),
+                                            ));
+                                      },
+                                      icon: Badge(
+                                        label: Text(itemCount.toString()),
+                                      )),
+                            ),
+                          )
+                        ]),
                       ],
                     ),
                   ],
@@ -133,45 +164,72 @@ class _DetailedDressState extends State<DetailedDress> {
                     Text(widget.left),
                     SizedBox(
                       height: 20,
-                    )
+                    ),
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: StartingColor.customGrey)),
+                      child: Icon(
+                        Icons.favorite_border_outlined,
+                        color: StartingColor.customPurple,
+                      ),
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 40,
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: AddToCartButton(
+                  trolley: Image.asset(
+                    "assets/images/shopping-cart.png",
+                    color: StartingColor.customPurple,
                     width: 40,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: StartingColor.customGrey)),
+                    height: 40,
+                  ),
+                  text: Text(
+                    "ADD TO CART",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: StartingColor.customPurple,
+                      fontSize: 18,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.fade,
+                  ),
+                  check: SizedBox(
+                    width: 50,
+                    height: 50,
                     child: Icon(
-                      Icons.favorite_border_outlined,
+                      Icons.check,
                       color: StartingColor.customPurple,
+                      size: 24,
                     ),
                   ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      elevation: 20,
-                      shadowColor: StartingColor.customBlack,
-                      backgroundColor: Color.fromARGB(255, 241, 204, 247),
-                    ),
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.shopping_bag,
-                      color: StartingColor.customPurple,
-                    ),
-                    label: Text(
-                      "ADD TO CART",
-                      style: TextStyle(color: StartingColor.customPurple),
-                    ),
-                  ),
-                ],
-              ),
+                  borderRadius: BorderRadius.circular(30),
+                  backgroundColor: Color.fromARGB(255, 231, 177, 239),
+                  onPressed: (id) {
+                    if (id == AddToCartButtonStateId.idle) {
+                      //handle logic when pressed on idle state button.
+                      setState(() {
+                        stateId = AddToCartButtonStateId.loading;
+                        Future.delayed(Duration(seconds: 3), () {
+                          setState(() {
+                            stateId = AddToCartButtonStateId.done;
+                          });
+                        });
+                      });
+                    } else if (id == AddToCartButtonStateId.done) {
+                      //handle logic when pressed on done state button.
+                      setState(() {
+                        stateId = AddToCartButtonStateId.idle;
+                      });
+                    }
+                  },
+                  stateId: stateId,
+                ),
+              )
             ],
           ),
         ),

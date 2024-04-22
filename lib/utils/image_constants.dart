@@ -1,3 +1,5 @@
+import 'package:bridal_app_project/controller/home_screen_controller.dart';
+
 class ImageConstants {
   static List<String> shopImageUrlShop = [
     "https://mangalorecity.in/wp-content/uploads/2020/03/jayalaxmi.jpg",
@@ -66,16 +68,25 @@ class ImageConstants {
     {
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568263-5.jpg",
       "name": "Grape Wine Semi Banarasi Silk Saree",
-      "price": 4577,
+      "price": "4,761.00",
       "des": "Adgsfh",
       "left": "Only 3 left"
     },
     {
       "img": "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
       "name": "Grape Wine Semi Banarasi Silk Saree",
-      "price": 4577,
+      "price": "4,761.00",
       "des": "Adgsfh",
       "left": "Only 3 left"
     },
   ];
+  // List<ItemModel> itemList = [
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price",left: "1 left", img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
+  // ];
 }

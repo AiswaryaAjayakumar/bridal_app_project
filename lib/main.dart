@@ -1,17 +1,16 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable
 
-import 'package:bridal_app_project/controller/home_screen_controller.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
-import 'package:bridal_app_project/view/home_screen/home_screen.dart';
-import 'package:bridal_app_project/view/home_screen/widgets/location_screen.dart';
-import 'package:bridal_app_project/view/splash_screen/splash_screen.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await PersistentShoppingCart().init();
   await Firebase.initializeApp(
       options: FirebaseOptions(
           apiKey: "AIzaSyC3lbvLHjdHUrVj1VSmgOUMm4yDIkDJaGc",
@@ -19,6 +18,7 @@ Future<void> main() async {
           messagingSenderId: "",
           projectId: "zaum-674a0",
           storageBucket: "zaum-674a0.appspot.com"));
+
   runApp(BridalApp());
 }
 
@@ -27,16 +27,9 @@ class BridalApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => HomeScreenController(),
-        )
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: BottomNav(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BottomNav(),
     );
   }
 }
