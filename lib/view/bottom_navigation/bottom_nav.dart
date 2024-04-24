@@ -3,7 +3,7 @@
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/home_screen.dart';
 import 'package:bridal_app_project/view/profile_screen/profile_screen.dart';
-import 'package:bridal_app_project/view/type_screen/type_screen.dart';
+import 'package:bridal_app_project/view/category_screen/category_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  List pages = [HomeScreen(), TypeScreen(), ProfileScreen()];
+  List pages = [HomeScreen(), CategoryScreen(), ProfileScreen()];
   int indexNum = 0;
   @override
   Widget build(BuildContext context) {

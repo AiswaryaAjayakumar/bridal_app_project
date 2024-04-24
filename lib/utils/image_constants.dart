@@ -1,4 +1,6 @@
-import 'package:bridal_app_project/controller/home_screen_controller.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
 
 class ImageConstants {
   static List<String> shopImageUrlShop = [
@@ -89,4 +91,32 @@ class ImageConstants {
   //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
   //   ItemModel(id: "1", name: "nn", des: "des", price: "price", left: "1 left",img: "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg"),
   // ];
+
+  static List<Map> profile = [
+    {
+      "icon": Icon(Icons.shopping_bag_outlined),
+      "title": "Your Trial cart",
+      "sub": "Check your trial cart"
+    },
+    {
+      "icon": Icon(Icons.help),
+      "title": "Help and Support",
+      "sub": "Get help for your account"
+    },
+    {
+      "icon": Icon(Icons.import_contacts),
+      "title": "Address",
+      "sub": "Check your trial cart"
+    },
+    {
+      "icon": Icon(Icons.favorite_border),
+      "title": "Wishlist",
+      "sub": "Check your favourites"
+    },
+    {
+      "icon": Icon(Icons.edit),
+      "title": "Edit Your Profile",
+      "sub": "Edit your profile and update details"
+    },
+  ];
 }

@@ -5,7 +5,6 @@ import 'dart:ui';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
 
-
 import 'package:bridal_app_project/view/sign_page/widgets/forgot_password.dart';
 import 'package:bridal_app_project/view/sign_up_page/sign_up_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -50,8 +49,8 @@ class _SignPageScreenState extends State<SignPageScreen> {
               decoration:
                   BoxDecoration(color: Colors.grey.shade200.withOpacity(0.5)),
               child: Form(
+                key: _formKey,
                 child: Column(
-                  key: _formKey,
                   children: [
                     Center(
                       child: Padding(

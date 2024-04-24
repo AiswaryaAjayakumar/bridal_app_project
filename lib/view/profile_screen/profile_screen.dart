@@ -1,6 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-
+import 'package:bridal_app_project/utils/image_constants.dart';
+import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -14,7 +17,139 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Profile")),
+      appBar: AppBar(
+        // leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pushReplacement(
+        //           context,
+        //           MaterialPageRoute(
+        //             builder: (context) => BottomNav(),
+        //           ));
+        //     },
+        //     icon: Icon(Icons.arrow_back)),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                "assets/images/alert.png",
+                color: StartingColor.customPurple,
+                scale: 25,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                "assets/images/favorite.png",
+                color: StartingColor.customPurple,
+                scale: 25,
+              )),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CartScreen(),
+                    ));
+              },
+              icon: Image.asset(
+                "assets/images/shopping-bag (1).png",
+                color: StartingColor.customPurple,
+                scale: 25,
+              )),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Hey",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Aiswarya",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: Icon(Icons.shopping_bag_outlined),
+                  title: Text(
+                    "Your Trial cart",
+                  ),
+                  subtitle: Text("Check your trial cart"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: (Icon(Icons.help)),
+                  title: Text(
+                    "Help and Support",
+                  ),
+                  subtitle: Text("Get help for your account"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: Icon(Icons.import_contacts),
+                  title: Text(
+                    "Address",
+                  ),
+                  subtitle: Text("Check your trial cart"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: Icon(Icons.favorite_border),
+                  title: Text(
+                    "Wishlist",
+                  ),
+                  subtitle: Text("Check your favourites"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: Icon(Icons.edit),
+                  title: Text(
+                    "Edit Your Profile",
+                  ),
+                  subtitle: Text("Edit your profile and update details"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {},
+                child: ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text(
+                    "Settings",
+                  ),
+                  subtitle: Text("Edit your details"),
+                  trailing: Icon(Icons.chevron_right),
+                ),
+              ),
+              Divider()
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/home_screen.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -58,14 +59,21 @@ class _LocationScreenState extends State<LocationScreen> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    "Auto Detect My Location",
-                    style: TextStyle(color: StartingColor.customPurple),
-                  )
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MapScreen(),
+                            ));
+                      },
+                      child: Text(
+                        "Auto Detect My Location",
+                        style: TextStyle(color: StartingColor.customPurple),
+                      ))
                 ],
               ),
             ),
-            
           ],
         ),
       ),

@@ -1,12 +1,7 @@
-class ItemModel {
-  final String id, name, des, img,price, left;
- 
-  ItemModel(  {
-    required this.id,
-    required this.name,
-    required this.des,
-    required this.price,
-    required this.img,
-    required this.left,
-  });
-}
+// import 'package:bridal_app_project/models/product_res_model.dart.dart';
+
+// class CartModel {
+//   PrdResModel product;
+//   int quantity;
+//   CartModel({required this.product, this.quantity = 1});
+// }

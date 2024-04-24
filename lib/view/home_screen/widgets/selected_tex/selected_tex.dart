@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types, unnecessary_new
 
 import 'package:animated_text_kit/animated_text_kit.dart';
+
 import 'package:bridal_app_project/utils/image_constants.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/carousel_slide_screen.dart';
@@ -15,6 +16,8 @@ class Selected_Tex extends StatefulWidget {
 }
 
 class _Selected_TexState extends State<Selected_Tex> {
+  
+
   static const colorizeColors = [
     Colors.purple,
     Colors.blue,
@@ -71,13 +74,6 @@ class _Selected_TexState extends State<Selected_Tex> {
                     textStyle:
                         TextStyle(fontSize: 50, fontFamily: "Milonga-Regular"),
                     colors: colorizeColors),
-                // TyperAnimatedText("Available Stock",
-                //     textStyle: TextStyle(
-                //       color: StartingColor.customPurple,
-                //       fontFamily: "Milonga-Regular",
-                //       fontSize: 40,
-                //     ),
-                //     speed: Duration(milliseconds: 100)),
               ],
               isRepeatingAnimation: true,
               totalRepeatCount: 20,
