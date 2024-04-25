@@ -10,6 +10,8 @@ class StartingColor {
   static Color customPurple = Colors.purple;
   static Color customPurple1 = Color.fromARGB(255, 219, 136, 233);
   static Color customGreen = Colors.green;
+  static Color customGold = Color.fromARGB(255, 141, 104, 55);
+   static Color customRed2 = Color.fromARGB(249, 103, 15, 9);
 }
 
 class ButtonCustomColor {

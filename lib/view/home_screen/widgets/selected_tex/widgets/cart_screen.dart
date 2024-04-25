@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_import, avoid_unnecessary_containers, sort_child_properties_last
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_import, avoid_unnecessary_containers, sort_child_properties_last, unused_local_variable, prefer_final_fields
 
 import 'package:bridal_app_project/controller/cart_screen_controller.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/confirm_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatefulWidget {
@@ -15,6 +16,8 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  var _formKey = GlobalKey<FormState>();
+  TextEditingController dateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,11 +103,47 @@ class _CartScreenState extends State<CartScreen> {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
-                      title: Text(
-                        "Alert",
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                      title: Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            Text("Confirm Your Trail Day"),
+                            TextFormField(
+                              readOnly: true,
+                              validator: (value) {
+                                if (dateController.text.isNotEmpty) {
+                                  return null;
+                                } else {
+                                  return "Enter a valid date";
+                                }
+                              },
+                              controller: dateController,
+                              decoration: InputDecoration(
+                                  suffixIcon: InkWell(
+                                      onTap: () async {
+                                        final DateTime? selectedDate =
+                                            await showDatePicker(
+                                                context: context,
+                                                firstDate: DateTime(2000),
+                                                lastDate: DateTime(2025));
+                                        if (selectedDate != null) {
+                                          String formatedDate =
+                                              DateFormat("dd/MM/yyyy")
+                                                  .format(selectedDate);
+
+                                          dateController.text = formatedDate;
+                                        }
+                                      },
+                                      child: Icon(Icons.calendar_month))),
+                            ),
+                          ],
+                        ),
                       ),
+                      // title: Text(
+                      //   "Alert",
+                      //   style: TextStyle(
+                      //       fontSize: 30, fontWeight: FontWeight.bold),
+                      // ),
                       content: Text("Are you sure about your order"),
                       actions: [
                         TextButton(

@@ -29,8 +29,6 @@ class _ConfirmTrialState extends State<ConfirmTrial> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Lottie.asset("assets/images/Animation - 1713706283967.json",
-                  fit: BoxFit.cover),
               Container(
                 height: 400,
                 decoration: BoxDecoration(

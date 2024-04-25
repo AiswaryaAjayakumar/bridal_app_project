@@ -9,15 +9,27 @@ import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets
 import 'package:flutter/material.dart';
 
 class Selected_Tex extends StatefulWidget {
-  const Selected_Tex({super.key});
+  const Selected_Tex({
+    super.key,
+    required this.title,
+    this.aniamtedText,
+    this.categoryList,
+    this.fontSize = 35,
+    this.fontFamily = "OoohBaby-Regular",
+    required this.color,
+  });
+  final String title;
+  final double fontSize;
+  final String? aniamtedText;
+  final String? categoryList;
+  final String fontFamily;
+  final Color color;
 
   @override
   State<Selected_Tex> createState() => _Selected_TexState();
 }
 
 class _Selected_TexState extends State<Selected_Tex> {
-  
-
   static const colorizeColors = [
     Colors.purple,
     Colors.blue,
@@ -31,28 +43,20 @@ class _Selected_TexState extends State<Selected_Tex> {
         child: CustomScrollView(slivers: [
           SliverAppBar(
             automaticallyImplyLeading: false,
-            leading: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              child: CircleAvatar(
-                radius: 25,
-                backgroundImage: NetworkImage(
-                    "https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/2f/ce/25/2fce2506-bdc0-9721-64c3-1a789a04a11a/source/512x512bb.jpg"),
-              ),
-            ),
 
             floating: true,
             //backgroundColor: Colors.amber,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                "Jayalakshmi",
+                widget.title,
                 style: TextStyle(
-                    color: StartingColor.customRed,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 37,
-                    fontFamily: "OoohBaby-Regular"),
+                    color: widget.color,
+                    fontWeight: FontWeight.w700,
+                    fontSize: widget.fontSize,
+                    fontFamily: widget.fontFamily),
               ),
             ),
-            expandedHeight: 80,
+            expandedHeight: 90,
             // title: Text(
             //   "Jayalakshmi",
             //   style: TextStyle(
@@ -70,7 +74,7 @@ class _Selected_TexState extends State<Selected_Tex> {
             sliver: SliverToBoxAdapter(
                 child: AnimatedTextKit(
               animatedTexts: [
-                ColorizeAnimatedText("Available Stock",
+                ColorizeAnimatedText(widget.aniamtedText.toString(),
                     textStyle:
                         TextStyle(fontSize: 50, fontFamily: "Milonga-Regular"),
                     colors: colorizeColors),
@@ -129,8 +133,9 @@ class _Selected_TexState extends State<Selected_Tex> {
                   child: Container(
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: NetworkImage(ImageConstants
-                                .shopImageUrlCategory[index]["url"]),
+                            image: AssetImage(ImageConstants
+                                .shopImageUrlCategory[index]["url"]
+                                .toString()),
                             fit: BoxFit.cover),
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [

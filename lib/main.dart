@@ -2,7 +2,6 @@
 
 import 'package:bridal_app_project/controller/cart_screen_controller.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
-import 'package:bridal_app_project/view/splash_screen/splash_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +34,7 @@ class BridalApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: BottomNav(),
       ),
     );
   }

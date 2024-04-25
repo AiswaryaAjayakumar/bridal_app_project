@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:bridal_app_project/utils/image_constants.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
-import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:flutter/material.dart';
 

@@ -54,6 +54,7 @@ dependencies:
   url_launcher: ^6.2.6
   flutter_map: ^6.1.0
   latlong2: ^0.9.1
+  flutter_swiper_view: ^1.1.8
   
   
   
@@ -88,6 +89,8 @@ flutter:
   assets:
     - assets/images/
   #   - images/a_dot_ham.jpeg
+    - assets/textiles/
+  
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -114,6 +117,18 @@ flutter:
     - family: OoohBaby-Regular
       fonts:
         - asset: fonts/OoohBaby-Regular.ttf
+
+    - family: Cinzel-VariableFont
+      fonts:
+        - asset: fonts/Cinzel-VariableFont_wght.ttf
+
+    - family: Allura-Regular
+      fonts:
+        - asset: fonts/Allura-Regular.ttf
+
+    - family: Montserrat-VariableFont_wght
+      fonts:
+        - asset: fonts/Montserrat-VariableFont_wght.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
