@@ -17,53 +17,12 @@
 
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class CartScreenController with ChangeNotifier {
-  // final List shopItems = [
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ],
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ],
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ],
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ],
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ],
-  //   [
-  //     "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
-  //     "Banarasi",
-  //     "des",
-  //     "7,677",
-  //     "left"
-  //   ]
-  // ];
+  var myBox = Hive.box("items");
 
   static List<Map> shopItems = [
     {
@@ -105,15 +64,34 @@ class CartScreenController with ChangeNotifier {
       "left": "Only 3 left"
     },
   ];
+
+
+  
   bool isLoading = false;
   List cartItems = [];
 
   get shopItemList => shopItems;
   get cartItemList => cartItems;
 
-  void addToCart(int index) {
+  void addToCart(int index, BuildContext context) {
+    final isCartAdd =
+        cartItems.any((element) => element[index] == element[index]);
+
+    if (isCartAdd) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Already in cart"),
+        backgroundColor: Colors.red,
+      ));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CartScreen(),
+          ));
+    } else {
+      cartItems.add(shopItems[index]);
+    }
+
     isLoading = true;
-    cartItems.add(shopItems[index]);
     notifyListeners();
   }
 

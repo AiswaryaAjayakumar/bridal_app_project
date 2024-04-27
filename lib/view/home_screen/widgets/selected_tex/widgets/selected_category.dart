@@ -6,7 +6,9 @@ import 'package:bridal_app_project/global__widgets/reusable_loading.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/custom_filters_show_model_bottom.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/detailed_dress.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/price_custom_bottom_sheet.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -33,7 +35,12 @@ class _SelectedcategoryState extends State<Selectedcategory> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) => PriceCutomBottomSheet(),
+                  );
+                },
                 child: Row(
                   children: [
                     Icon(
@@ -53,10 +60,9 @@ class _SelectedcategoryState extends State<Selectedcategory> {
               VerticalDivider(),
               InkWell(
                 onTap: () {
-                  showModalBottomSheet(
-                    elevation: 10,
+                  showDialog(
                     context: context,
-                    builder: (context) => CustomFiltersShowModelBottom(),
+                    builder: (context) => CustomPopUp(),
                   );
                 },
                 child: Row(
@@ -137,7 +143,7 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                               onSavePressed: () {
                                 Provider.of<CartScreenController>(context,
                                         listen: false)
-                                    .addToCart(index);
+                                    .addToCart(index, context);
                               },
                             ),
                           ));

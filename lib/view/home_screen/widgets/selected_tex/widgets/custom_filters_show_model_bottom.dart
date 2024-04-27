@@ -1,59 +1,51 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/color_custom_bottom_sheet.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/patternCustomBottomSheet.dart';
 import 'package:flutter/material.dart';
 
-class CustomFiltersShowModelBottom extends StatefulWidget {
-  const CustomFiltersShowModelBottom({super.key});
+class CustomPopUp extends StatefulWidget {
+  const CustomPopUp({super.key});
 
   @override
-  State<CustomFiltersShowModelBottom> createState() =>
-      _CustomFiltersShowModelBottomState();
+  State<CustomPopUp> createState() => _CustomPopUpState();
 }
 
-class _CustomFiltersShowModelBottomState
-    extends State<CustomFiltersShowModelBottom> {
-  bool isChecked = false;
+class _CustomPopUpState extends State<CustomPopUp> {
   @override
   Widget build(BuildContext context) {
-    return StatefulBuilder(
-      builder: (context, setState) {
-        return Padding(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: Container(
-            height: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+    return AlertDialog(
+      content: Container(
+        height: 100,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) => ColorCustomBottomSheet(),
+                );
+              },
+              child: Text("Colors"),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextButton(onPressed: () {}, child: Text("Colors")),
-                  TextButton(onPressed: () {}, child: Text("Patterns")),
-                  Row(
-                    children: [
-                      Checkbox(
-                        activeColor: StartingColor.customGrey,
-                        checkColor: StartingColor.customPurple,
-                        value: isChecked,
-                        onChanged: (value) {
-                          if (value != null) {
-                            isChecked = value;
-                          }
-                          setState(() {});
-                        },
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                showModalBottomSheet(
+                  elevation: 10,
+                  // backgroundColor: Color.fromARGB(255, 2, 151, 121),
+                  context: context,
+                  builder: (context) => PatternCustomBottomSheet(),
+                );
+              },
+              child: Text("Patterns"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

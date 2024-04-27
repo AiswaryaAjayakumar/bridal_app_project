@@ -151,11 +151,17 @@ class _SignPageScreenState extends State<SignPageScreen> {
                                       password: pass.text,
                                     );
                                     if (credential.user?.uid != null) {
+                                        ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                              content: Text(
+                                          "Login Successfully...."),backgroundColor:Colors.green,));
+                                          
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) => BottomNav(),
                                           ));
+                                         
                                     } else {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(SnackBar(

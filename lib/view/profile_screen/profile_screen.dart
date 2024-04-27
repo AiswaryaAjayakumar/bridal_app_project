@@ -2,6 +2,7 @@
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
+import 'package:bridal_app_project/view/profile_screen/widgets/help.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -73,7 +74,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 20,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CartScreen(),
+                      ));
+                },
                 child: ListTile(
                   leading: Icon(Icons.shopping_bag_outlined),
                   title: Text(
@@ -85,25 +92,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Divider(),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HelpScreen(),
+                      ));
+                },
                 child: ListTile(
                   leading: (Icon(Icons.help)),
                   title: Text(
                     "Help and Support",
                   ),
                   subtitle: Text("Get help for your account"),
-                  trailing: Icon(Icons.chevron_right),
-                ),
-              ),
-              Divider(),
-              InkWell(
-                onTap: () {},
-                child: ListTile(
-                  leading: Icon(Icons.import_contacts),
-                  title: Text(
-                    "Address",
-                  ),
-                  subtitle: Text("Check your trial cart"),
                   trailing: Icon(Icons.chevron_right),
                 ),
               ),

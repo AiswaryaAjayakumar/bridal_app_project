@@ -82,7 +82,7 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                     builder: (context) => Selected_Tex(
                       fontSize: 25,
                       fontFamily: "Cinzel-VariableFont",
-                      title: "lulu CELEBRATE",
+                      title: "LULU CELEBRATE",
                       color: StartingColor.customGold,
                       aniamtedText: "Available Stock",
                     ),
