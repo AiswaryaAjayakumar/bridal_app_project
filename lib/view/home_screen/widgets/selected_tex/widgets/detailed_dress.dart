@@ -2,8 +2,10 @@
 
 import 'package:bridal_app_project/global__widgets/reusable_loading.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/home_screen/home_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:favorite_button/favorite_button.dart';
 
 import 'package:flutter/material.dart';
@@ -32,7 +34,8 @@ class DetailedDress extends StatefulWidget {
 
 class _DetailedDressState extends State<DetailedDress> {
   AddToCartButtonStateId stateId = AddToCartButtonStateId.idle;
-
+CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection("items");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,13 +50,22 @@ class _DetailedDressState extends State<DetailedDress> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "ZAUM",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "ArtographieLight",
-                          color: StartingColor.customPurple),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ));
+                      },
+                      child: Text(
+                        "ZAUM",
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "ArtographieLight",
+                            color: StartingColor.customPurple),
+                      ),
                     ),
                     Row(
                       children: [

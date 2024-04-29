@@ -1,8 +1,11 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:bridal_app_project/utils/image_constants.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/carousel_slide_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/selected_tex.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class ListedShopsScreen extends StatefulWidget {
   const ListedShopsScreen({super.key});
@@ -29,6 +32,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                       title: "Jayalakshmi",
                       color: StartingColor.customRed,
                       aniamtedText: "Available Stock",
+                      carousel: Container(
+                          height: 230,
+                          child: Swiper(
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                ImageConstants.slider[index].toString(),
+                                fit: BoxFit.cover,
+                              );
+                            },
+
+                            indicatorLayout: PageIndicatorLayout.COLOR,
+                            autoplay: true,
+                            itemCount: ImageConstants.slider.length,
+                            pagination: const SwiperPagination(),
+                            // control: const SwiperControl(),
+                          )),
                     ),
                   ));
             },
@@ -57,6 +76,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                       fontSize: 40,
                       color: StartingColor.customBlack,
                       fontFamily: "Cinzel-VariableFont",
+                      carousel: Container(
+                          height: 230,
+                          child: Swiper(
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                ImageConstants.slider1[index].toString(),
+                                fit: BoxFit.cover,
+                              );
+                            },
+
+                            indicatorLayout: PageIndicatorLayout.COLOR,
+                            autoplay: true,
+                            itemCount: ImageConstants.slider.length,
+                            pagination: const SwiperPagination(),
+                            // control: const SwiperControl(),
+                          )),
                     ),
                   ));
             },
@@ -85,6 +120,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                       title: "LULU CELEBRATE",
                       color: StartingColor.customGold,
                       aniamtedText: "Available Stock",
+                      carousel: Container(
+                          height: 230,
+                          child: Swiper(
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                ImageConstants.slider2[index].toString(),
+                                fit: BoxFit.cover,
+                              );
+                            },
+
+                            indicatorLayout: PageIndicatorLayout.COLOR,
+                            autoplay: true,
+                            itemCount: ImageConstants.slider.length,
+                            pagination: const SwiperPagination(),
+                            // control: const SwiperControl(),
+                          )),
                     ),
                   ));
             },
@@ -113,6 +164,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                       title: "Althea",
                       fontFamily: "Allura-Regular",
                       aniamtedText: "Available Stock",
+                      carousel: Container(
+                          height: 230,
+                          child: Swiper(
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                ImageConstants.slider[index].toString(),
+                                fit: BoxFit.cover,
+                              );
+                            },
+
+                            indicatorLayout: PageIndicatorLayout.COLOR,
+                            autoplay: true,
+                            itemCount: ImageConstants.slider.length,
+                            pagination: const SwiperPagination(),
+                            // control: const SwiperControl(),
+                          )),
                     ),
                   ));
             },
@@ -141,6 +208,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                       color: StartingColor.customRed2,
                       title: "RADHA KRISHNA",
                       aniamtedText: "Available Stock",
+                      carousel: Container(
+                          height: 230,
+                          child: Swiper(
+                            itemBuilder: (context, index) {
+                              return Image.asset(
+                                ImageConstants.slider[index].toString(),
+                                fit: BoxFit.cover,
+                              );
+                            },
+
+                            indicatorLayout: PageIndicatorLayout.COLOR,
+                            autoplay: true,
+                            itemCount: ImageConstants.slider.length,
+                            pagination: const SwiperPagination(),
+                            // control: const SwiperControl(),
+                          )),
                     ),
                   ));
             },

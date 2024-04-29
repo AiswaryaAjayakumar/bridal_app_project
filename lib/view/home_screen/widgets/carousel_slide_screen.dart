@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class CarouselSlideScreen extends StatefulWidget {
-  const CarouselSlideScreen({super.key});
+  const CarouselSlideScreen({super.key, required this.imgUrl});
+
+  final String imgUrl;
+  
 
   @override
   State<CarouselSlideScreen> createState() => _CarouselSlideScreenState();

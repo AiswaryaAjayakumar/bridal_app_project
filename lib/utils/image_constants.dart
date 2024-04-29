@@ -12,10 +12,7 @@ class ImageConstants {
   ];
   static List<Map> shopImageUrlCategory = [
     {"url": "assets/textiles/banarasi.webp", "name": "Banarasi\nSarees"},
-    {
-      "url": "assets/textiles/kancheepuram.webp",
-      "name": "Kanchipuram\nSarees "
-    },
+    {"url": "assets/textiles/kancheepuram.webp", "name": "Kanchipuram\nSarees"},
     {"url": "assets/textiles/kasavu.jpeg", "name": "Kasavu\nSarees"},
     {"url": "assets/textiles/chanderi.webp", "name": "Chandheri\nSarees"},
     {"url": "assets/textiles/soft-silk.webp", "name": "Soft Silk\nSarees"},
@@ -99,8 +96,20 @@ class ImageConstants {
     },
   ];
   static List<String> slider = [
-    "assets/textiles/j3.jpeg"
-        "assets/textiles/j2.jpeg",
+    "assets/textiles/j3.jpeg",
+    "assets/textiles/j2.jpeg",
     "assets/textiles/j.jpeg",
   ];
+   
+   static List<String> slider1 = [
+    "assets/textiles/seematti2.jpeg",
+    "assets/textiles/seematti3.jpeg",
+    "assets/textiles/seemati1.jpeg",
+  ];
+  static List<String> slider2 = [
+    "assets/textiles/lulu3.jpeg",
+    "assets/textiles/lulu1.jpeg",
+    "assets/textiles/lulu2.jpeg",
+  ];
+
 }

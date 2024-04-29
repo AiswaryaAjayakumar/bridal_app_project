@@ -26,6 +26,7 @@ class CartScreenController with ChangeNotifier {
 
   static List<Map> shopItems = [
     {
+      "id": "1",
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568260-5.jpg",
       "name": "Grape Wine Semi Banarasi Silk Saree",
       "price": "4,761.00",
@@ -34,6 +35,7 @@ class CartScreenController with ChangeNotifier {
       "left": "Only 1 left in stock"
     },
     {
+      "id": "2",
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568261-5.jpg",
       "name": "Maroon Semi Banarasi Silk Saree",
       "price": "4,851.00",
@@ -42,6 +44,7 @@ class CartScreenController with ChangeNotifier {
       "left": "Only 1 left in stock"
     },
     {
+      "id": "3",
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568259-5.jpg",
       "name": "Mustard Yellow Semi Banarasi Silk Saree",
       "price": "4,761.00",
@@ -50,6 +53,7 @@ class CartScreenController with ChangeNotifier {
       "left": "Only 1 left in stock"
     },
     {
+      "id": "4",
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568263-5.jpg",
       "name": "Grape Wine Semi Banarasi Silk Saree",
       "price": "4,761.00",
@@ -57,6 +61,7 @@ class CartScreenController with ChangeNotifier {
       "left": "Only 3 left"
     },
     {
+      "id": "5",
       "img": "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
       "name": "Grape Wine Semi Banarasi Silk Saree",
       "price": "4,761.00",
@@ -65,8 +70,6 @@ class CartScreenController with ChangeNotifier {
     },
   ];
 
-
-  
   bool isLoading = false;
   List cartItems = [];
 
@@ -74,22 +77,7 @@ class CartScreenController with ChangeNotifier {
   get cartItemList => cartItems;
 
   void addToCart(int index, BuildContext context) {
-    final isCartAdd =
-        cartItems.any((element) => element[index] == element[index]);
-
-    if (isCartAdd) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Already in cart"),
-        backgroundColor: Colors.red,
-      ));
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CartScreen(),
-          ));
-    } else {
-      cartItems.add(shopItems[index]);
-    }
+    cartItems.add(shopItems[index]);
 
     isLoading = true;
     notifyListeners();

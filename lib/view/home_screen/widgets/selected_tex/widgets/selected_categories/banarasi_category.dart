@@ -4,6 +4,7 @@ import 'package:bridal_app_project/controller/cart_screen_controller.dart';
 import 'package:bridal_app_project/global__widgets/reusable_loading.dart';
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/custom_filters_show_model_bottom.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/detailed_dress.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/price_custom_bottom_sheet.dart';
@@ -13,14 +14,14 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-class Selectedcategory extends StatefulWidget {
-  const Selectedcategory({super.key});
+class BanarasiCategory extends StatefulWidget {
+  const BanarasiCategory({super.key});
 
   @override
-  State<Selectedcategory> createState() => _SelectedcategoryState();
+  State<BanarasiCategory> createState() => _BanarasiCategoryState();
 }
 
-class _SelectedcategoryState extends State<Selectedcategory> {
+class _BanarasiCategoryState extends State<BanarasiCategory> {
   @override
   Widget build(BuildContext context) {
     // final homeScreenState = context.watch<CartScreenController>();
@@ -104,7 +105,13 @@ class _SelectedcategoryState extends State<Selectedcategory> {
                     scale: 25,
                   )),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CartScreen(),
+                        ));
+                  },
                   icon: Image.asset(
                     "assets/images/shopping-bag (1).png",
                     color: StartingColor.customPurple,

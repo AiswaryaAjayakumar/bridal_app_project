@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace
 
-import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/color_custom_bottom_sheet.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/patternCustomBottomSheet.dart';
 import 'package:flutter/material.dart';

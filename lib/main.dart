@@ -19,8 +19,8 @@ Future<void> main() async {
           projectId: "zaum-674a0",
           storageBucket: "zaum-674a0.appspot.com"));
 
-     await Hive.initFlutter();
-     var box =await Hive.openBox("items");
+  await Hive.initFlutter();
+  var box = await Hive.openBox("items");
 
   runApp(BridalApp());
 }
@@ -34,7 +34,8 @@ class BridalApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => CartScreenController(),
-        )
+        ),
+        
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
