@@ -95,21 +95,30 @@ class ImageConstants {
       "sub": "Edit your profile and update details"
     },
   ];
-  static List<String> slider = [
+  static List<String> slider1 = [
     "assets/textiles/j3.jpeg",
     "assets/textiles/j2.jpeg",
     "assets/textiles/j.jpeg",
   ];
-   
-   static List<String> slider1 = [
+
+  static List<String> slider2 = [
     "assets/textiles/seematti2.jpeg",
     "assets/textiles/seematti3.jpeg",
     "assets/textiles/seemati1.jpeg",
   ];
-  static List<String> slider2 = [
+  static List<String> slider3 = [
     "assets/textiles/lulu3.jpeg",
     "assets/textiles/lulu1.jpeg",
     "assets/textiles/lulu2.jpeg",
   ];
-
+  static List<String> slider4 = [
+    "assets/textiles/jolly2.jpeg",
+    "assets/textiles/jolly5.jpg",
+    "assets/textiles/jolly5.jpg",
+  ];
+  static List<String> slider5 = [
+    "assets/textiles/lulu3.jpeg",
+    "assets/textiles/lulu1.jpeg",
+    "assets/textiles/lulu2.jpeg",
+  ];
 }

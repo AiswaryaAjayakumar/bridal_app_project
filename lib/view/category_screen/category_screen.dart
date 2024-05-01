@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
@@ -46,7 +46,82 @@ class _CategoryScreenState extends State<CategoryScreen> {
               )),
         ],
       ),
-      body: Center(child: Text("Type")),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            children: [
+              Container(
+                height: MediaQuery.sizeOf(context).height / 4.9,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 159, 155, 155),
+                          blurRadius: 8)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 223, 123, 241)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: MediaQuery.sizeOf(context).height / 4.9,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 159, 155, 155),
+                          blurRadius: 8)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 223, 123, 241)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: MediaQuery.sizeOf(context).height / 4.9,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 159, 155, 155),
+                          blurRadius: 8)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 223, 123, 241)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: MediaQuery.sizeOf(context).height / 4.9,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 159, 155, 155),
+                          blurRadius: 8)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 223, 123, 241)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: MediaQuery.sizeOf(context).height / 4.9,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 159, 155, 155),
+                          blurRadius: 8)
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 223, 123, 241)),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,69 +1,70 @@
-// // To parse this JSON data, do
-// //
-// //     final prdResModel = prdResModelFromJson(jsonString);
+// ignore_for_file: unused_local_variable
 
-// import 'dart:convert';
+void main() {
+  List<Map<String, dynamic>> shopItems = [
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568260-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": "4,761.00",
+      "des":
+          "Grape Wine Semi Banarasi Silk Saree Designer On The Body and Designer border. Includes Unstitched blouse",
+      "left": "Only 1 left in stock"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568261-5.jpg",
+      "name": "Maroon Semi Banarasi Silk Saree",
+      "price": "4,851.00",
+      "des":
+          "Maroon Semi Banarasi Silk Saree Designer Butta On The Body and Designer border. Includes Unstitched blouse",
+      "left": "Only 1 left in stock"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568259-5.jpg",
+      "name": "Mustard Yellow Semi Banarasi Silk Saree",
+      "price": "4,761.00",
+      "des":
+          "Mustard Yellow Semi Banarasi Silk Saree Designer On The Body and Designer border. Includes Unstitched blouse",
+      "left": "Only 1 left in stock"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/04/13568263-5.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": "4,761.00",
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+    {
+      "img": "https://seematti.com/wp-content/uploads/2024/03/13559623-4.jpg",
+      "name": "Grape Wine Semi Banarasi Silk Saree",
+      "price": "4,761.00",
+      "des": "Adgsfh",
+      "left": "Only 3 left"
+    },
+  ];
 
-// PrdResModel prdResModelFromJson(String str) => PrdResModel.fromJson(json.decode(str));
+  List<ShopItemsModel> shopItemModelList = shopItems
+      .map((e) => ShopItemsModel(
+          image: e["img"],
+          name: e["name"],
+          price: e["price"],
+          des: e["des"],
+          left: e["left"]))
+      .toList();
 
-// String prdResModelToJson(PrdResModel data) => json.encode(data.toJson());
+  
+}
 
-// class PrdResModel {
-//     int id;
-//     String title;
-//     num price;
-//     String description;
-//     String category;
-//     String image;
-//     Rating? rating;
-
-//     PrdResModel({
-//         required this.id,
-//         required this.title,
-//         required this.price,
-//         required this.description,
-//         required this.category,
-//         required this.image,
-//          this.rating,
-//     });
-
-//     factory PrdResModel.fromJson(Map<String, dynamic> json) => PrdResModel(
-//         id: json["id"],
-//         title: json["title"],
-//         price: json["price"]?.toDouble(),
-//         description: json["description"],
-//         category: json["category"],
-//         image: json["image"],
-//         rating: Rating.fromJson(json["rating"]),
-//     );
-
-//     Map<String, dynamic> toJson() => {
-//         "id": id,
-//         "title": title,
-//         "price": price,
-//         "description": description,
-//         "category": category,
-//         "image": image,
-//         "rating": rating!.toJson(),
-//     };
-// }
-
-// class Rating {
-//     double rate;
-//     int count;
-
-//     Rating({
-//         required this.rate,
-//         required this.count,
-//     });
-
-//     factory Rating.fromJson(Map<String, dynamic> json) => Rating(
-//         rate: json["rate"]?.toDouble(),
-//         count: json["count"],
-//     );
-
-//     Map<String, dynamic> toJson() => {
-//         "rate": rate,
-//         "count": count,
-//     };
-// }
+class ShopItemsModel {
+  String image;
+  String name;
+  String price;
+  String des;
+  String left;
+  ShopItemsModel({
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.des,
+    required this.left,
+  });
+}

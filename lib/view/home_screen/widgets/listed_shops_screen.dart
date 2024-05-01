@@ -31,20 +31,22 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                     builder: (context) => Selected_Tex(
                       title: "Jayalakshmi",
                       color: StartingColor.customRed,
-                      aniamtedText: "Available Stock",
+                      fontFamily: "OoohBaby-Regular",
+                      fontSize: 70,
+                      font: FontWeight.bold,
                       carousel: Container(
                           height: 230,
                           child: Swiper(
                             itemBuilder: (context, index) {
                               return Image.asset(
-                                ImageConstants.slider[index].toString(),
+                                ImageConstants.slider1[index].toString(),
                                 fit: BoxFit.cover,
                               );
                             },
 
                             indicatorLayout: PageIndicatorLayout.COLOR,
                             autoplay: true,
-                            itemCount: ImageConstants.slider.length,
+                            itemCount: ImageConstants.slider3.length,
                             pagination: const SwiperPagination(),
                             // control: const SwiperControl(),
                           )),
@@ -72,8 +74,8 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                   MaterialPageRoute(
                     builder: (context) => Selected_Tex(
                       title: "Seematti",
-                      aniamtedText: "Available Stock",
-                      fontSize: 40,
+                      fontSize: 70,
+                      font: FontWeight.w100,
                       color: StartingColor.customBlack,
                       fontFamily: "Cinzel-VariableFont",
                       carousel: Container(
@@ -81,14 +83,14 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                           child: Swiper(
                             itemBuilder: (context, index) {
                               return Image.asset(
-                                ImageConstants.slider1[index].toString(),
+                                ImageConstants.slider2[index].toString(),
                                 fit: BoxFit.cover,
                               );
                             },
 
                             indicatorLayout: PageIndicatorLayout.COLOR,
                             autoplay: true,
-                            itemCount: ImageConstants.slider.length,
+                            itemCount: ImageConstants.slider3.length,
                             pagination: const SwiperPagination(),
                             // control: const SwiperControl(),
                           )),
@@ -115,24 +117,24 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Selected_Tex(
-                      fontSize: 25,
+                      fontSize: 40,
+                      font: FontWeight.bold,
                       fontFamily: "Cinzel-VariableFont",
                       title: "LULU CELEBRATE",
                       color: StartingColor.customGold,
-                      aniamtedText: "Available Stock",
                       carousel: Container(
                           height: 230,
                           child: Swiper(
                             itemBuilder: (context, index) {
                               return Image.asset(
-                                ImageConstants.slider2[index].toString(),
+                                ImageConstants.slider3[index].toString(),
                                 fit: BoxFit.cover,
                               );
                             },
 
                             indicatorLayout: PageIndicatorLayout.COLOR,
                             autoplay: true,
-                            itemCount: ImageConstants.slider.length,
+                            itemCount: ImageConstants.slider3.length,
                             pagination: const SwiperPagination(),
                             // control: const SwiperControl(),
                           )),
@@ -159,24 +161,24 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Selected_Tex(
-                      fontSize: 45,
-                      color: StartingColor.customGold,
-                      title: "Althea",
-                      fontFamily: "Allura-Regular",
-                      aniamtedText: "Available Stock",
+                      fontSize: 50,
+                      font: FontWeight.bold,
+                      color: Color.fromARGB(255, 137, 3, 112),
+                      title: "JOLLY SILKS",
+                      fontFamily: "Montserrat-VariableFont_wght",
                       carousel: Container(
                           height: 230,
                           child: Swiper(
                             itemBuilder: (context, index) {
                               return Image.asset(
-                                ImageConstants.slider[index].toString(),
+                                ImageConstants.slider4[index].toString(),
                                 fit: BoxFit.cover,
                               );
                             },
 
                             indicatorLayout: PageIndicatorLayout.COLOR,
                             autoplay: true,
-                            itemCount: ImageConstants.slider.length,
+                            itemCount: ImageConstants.slider3.length,
                             pagination: const SwiperPagination(),
                             // control: const SwiperControl(),
                           )),
@@ -188,7 +190,7 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
               //width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/textiles/athlee.jpeg"),
+                    image: AssetImage("assets/images/jolly.png"),
                     fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -204,23 +206,23 @@ class _ListedShopsScreenState extends State<ListedShopsScreen> {
                   MaterialPageRoute(
                     builder: (context) => Selected_Tex(
                       fontSize: 23,
+                      font: FontWeight.bold,
                       fontFamily: "Montserrat-VariableFont_wght",
                       color: StartingColor.customRed2,
                       title: "RADHA KRISHNA",
-                      aniamtedText: "Available Stock",
                       carousel: Container(
                           height: 230,
                           child: Swiper(
                             itemBuilder: (context, index) {
                               return Image.asset(
-                                ImageConstants.slider[index].toString(),
+                                ImageConstants.slider5[index].toString(),
                                 fit: BoxFit.cover,
                               );
                             },
 
                             indicatorLayout: PageIndicatorLayout.COLOR,
                             autoplay: true,
-                            itemCount: ImageConstants.slider.length,
+                            itemCount: ImageConstants.slider3.length,
                             pagination: const SwiperPagination(),
                             // control: const SwiperControl(),
                           )),

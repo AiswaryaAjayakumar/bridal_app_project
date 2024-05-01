@@ -8,7 +8,6 @@ class CarouselSlideScreen extends StatefulWidget {
   const CarouselSlideScreen({super.key, required this.imgUrl});
 
   final String imgUrl;
-  
 
   @override
   State<CarouselSlideScreen> createState() => _CarouselSlideScreenState();
@@ -22,14 +21,14 @@ class _CarouselSlideScreenState extends State<CarouselSlideScreen> {
         child: Swiper(
           itemBuilder: (context, index) {
             return Image.asset(
-              ImageConstants.slider[index].toString(),
+              ImageConstants.slider3[index].toString(),
               fit: BoxFit.cover,
             );
           },
 
           indicatorLayout: PageIndicatorLayout.COLOR,
           autoplay: true,
-          itemCount: ImageConstants.slider.length,
+          itemCount: ImageConstants.slider3.length,
           pagination: const SwiperPagination(),
           // control: const SwiperControl(),
         ));

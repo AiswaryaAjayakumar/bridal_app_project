@@ -2,10 +2,10 @@
 
 import 'package:bridal_app_project/controller/cart_screen_controller.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
+import 'package:bridal_app_project/view/splash_screen/splash_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -18,9 +18,6 @@ Future<void> main() async {
           messagingSenderId: "",
           projectId: "zaum-674a0",
           storageBucket: "zaum-674a0.appspot.com"));
-
-  await Hive.initFlutter();
-  var box = await Hive.openBox("items");
 
   runApp(BridalApp());
 }
@@ -35,7 +32,6 @@ class BridalApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => CartScreenController(),
         ),
-        
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
