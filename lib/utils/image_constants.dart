@@ -121,4 +121,9 @@ class ImageConstants {
     "assets/textiles/lulu1.jpeg",
     "assets/textiles/lulu2.jpeg",
   ];
+  static List<String> slider6 = [
+    "https://seematti.com/wp-content/uploads/2024/02/13535141-5.jpg",
+    "https://seematti.com/wp-content/uploads/2024/03/13544480-6.jpg",
+    "https://seematti.com/wp-content/uploads/2024/03/13544496-6.jpg",
+  ];
 }

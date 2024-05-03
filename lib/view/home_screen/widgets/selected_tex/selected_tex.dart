@@ -107,7 +107,7 @@ class _Selected_TexState extends State<Selected_Tex> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => KanchipuramCategory(),
+                        builder: (context) => BanarasiCategory(),
                       ));
                 },
                 child: SelectedContainer(
@@ -124,7 +124,13 @@ class _Selected_TexState extends State<Selected_Tex> {
             children: [
               Expanded(
                   child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BanarasiCategory(),
+                      ));
+                },
                 child: SelectedContainer(
                   imgUrl: "assets/textiles/kasavu.jpeg",
                   name: "Kasavu\nSarees",
@@ -135,7 +141,13 @@ class _Selected_TexState extends State<Selected_Tex> {
               ),
               Expanded(
                   child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BanarasiCategory(),
+                      ));
+                },
                 child: SelectedContainer(
                   imgUrl: "assets/textiles/chanderi.webp",
                   name: "Chandheri\nSarees",
@@ -150,7 +162,13 @@ class _Selected_TexState extends State<Selected_Tex> {
             children: [
               Expanded(
                   child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BanarasiCategory(),
+                      ));
+                },
                 child: SelectedContainer(
                   imgUrl: "assets/textiles/soft-silk.webp",
                   name: "Soft Silk\nSarees",
@@ -161,7 +179,13 @@ class _Selected_TexState extends State<Selected_Tex> {
               ),
               Expanded(
                   child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BanarasiCategory(),
+                      ));
+                },
                 child: SelectedContainer(
                   imgUrl: "assets/textiles/tissue.webp",
                   name: "Tissue Silk\nsarees",

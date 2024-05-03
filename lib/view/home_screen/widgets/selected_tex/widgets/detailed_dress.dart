@@ -1,6 +1,5 @@
-// ignore_for_file: prefer_const_constructors, must_be_immutable, prefer_const_constructors_in_immutables, sort_child_properties_last, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers, use_build_context_synchronously, avoid_print
+// ignore_for_file: prefer_const_constructors, must_be_immutable, prefer_const_constructors_in_immutables, sort_child_properties_last, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
-import 'package:bridal_app_project/controller/cart_screen_controller.dart';
 import 'package:bridal_app_project/global__widgets/reusable_loading.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/home_screen/home_screen.dart';
@@ -12,11 +11,10 @@ import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_add_to_cart_button/flutter_add_to_cart_button.dart';
-import 'package:provider/provider.dart';
 
 class DetailedDress extends StatefulWidget {
   DetailedDress(
-      {Key? key,
+      {super.key,
       required this.img,
       required this.name,
       required this.price,
@@ -36,8 +34,8 @@ class DetailedDress extends StatefulWidget {
 
 class _DetailedDressState extends State<DetailedDress> {
   AddToCartButtonStateId stateId = AddToCartButtonStateId.idle;
-  CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection("items");
+// CollectionReference collectionReference =
+//         FirebaseFirestore.instance.collection("items");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -211,63 +209,23 @@ class _DetailedDressState extends State<DetailedDress> {
                   ),
                   borderRadius: BorderRadius.circular(30),
                   backgroundColor: Color.fromARGB(255, 231, 177, 239),
-                  onPressed: (id) async {
+                  onPressed: (id) {
                     if (id == AddToCartButtonStateId.idle) {
-                      // Check if the item is already in the cart
-                      bool isAlreadyInCart = Provider.of<CartScreenController>(
-                              context,
-                              listen: false)
-                          .kanchipuramCartItem
-                          .any((item) => item["name"] == widget.name);
-
-                      if (!isAlreadyInCart) {
-                        setState(() {
-                          stateId = AddToCartButtonStateId.loading;
-                        });
-
-                        try {
-                          // Add item details to Firebase Firestore
-                          await FirebaseFirestore.instance
-                              .collection('cart')
-                              .add({
-                            'img': widget.img,
-                            'name': widget.name,
-                            'price': widget.price,
-                            'des': widget.des,
-                            'left': widget.left,
-                            // Add any other fields you need
-                          });
-
-                          // Set state to done after successful addition
+                      //handle logic when pressed on idle state button.
+                      setState(() {
+                        stateId = AddToCartButtonStateId.loading;
+                        Future.delayed(Duration(seconds: 3), () {
                           setState(() {
                             stateId = AddToCartButtonStateId.done;
                           });
-
-                          // Call the onSavePressed callback to update the UI or perform any other action
                           widget.onSavePressed();
-
-                          // Show a confirmation snackbar or dialog
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text('Item added to cart'),
-                            backgroundColor: Colors.green,
-                          ));
-                        } catch (e) {
-                          print('Error adding item to cart: $e');
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text('Error adding item to cart'),
-                            backgroundColor: Colors.red,
-                          ));
-                          setState(() {
-                            stateId = AddToCartButtonStateId.idle;
-                          });
-                        }
-                      } else {
-                        // Item already exists in the cart
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text('Item is already in the cart'),
-                          backgroundColor: Colors.orange,
-                        ));
-                      }
+                        });
+                      });
+                    } else if (id == AddToCartButtonStateId.done) {
+                      //handle logic when pressed on done state button.
+                      setState(() {
+                        stateId = AddToCartButtonStateId.idle;
+                      });
                     }
                   },
                   stateId: stateId,

@@ -3,6 +3,8 @@
 import 'dart:async';
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
+import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
+import 'package:bridal_app_project/view/home_screen/home_screen.dart';
 
 import 'package:bridal_app_project/view/sign_page/sign_page_screen.dart';
 
@@ -11,8 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
-
+  SplashScreen({super.key, this.isLogged = false});
+  bool isLogged;
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -21,11 +23,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SignPageScreen(),
-          ));
+      if (widget.isLogged) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BottomNav(),
+            ));
+      } else {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SignPageScreen(),
+            ));
+      }
     });
     super.initState();
   }

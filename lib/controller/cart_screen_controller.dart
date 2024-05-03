@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CartScreenController with ChangeNotifier {
-  static List<Map> banarasiList = [
+  static List<Map> shopItems = [
     {
       "id": "1",
       "img": "https://seematti.com/wp-content/uploads/2024/04/13568260-5.jpg",
@@ -50,13 +50,13 @@ class CartScreenController with ChangeNotifier {
   ];
 
   bool isLoading = false;
-  List banarasiCartItem = [];
+  List cartItems = [];
 
-  get banarasi => banarasiList;
-  get banarasiCart => banarasiCartItem;
+  get shopItemList => shopItems;
+  get cartItemList => cartItems;
 
-  void addToCart1(int index, BuildContext context) {
-    banarasiCartItem.add(banarasiList[index]);
+  void addToCart(int index, BuildContext context) {
+    cartItems.add(shopItems[index]);
 
     isLoading = true;
     notifyListeners();
@@ -64,73 +64,74 @@ class CartScreenController with ChangeNotifier {
 
   void deleteItem(int index) {
     isLoading = true;
-    banarasiCartItem.removeAt(index);
+    cartItems.removeAt(index);
     notifyListeners();
   }
 
-  static List<Map> kanchipuramList = [
-    {
-      "id": "1",
-      "img": "https://seematti.com/wp-content/uploads/2024/04/13588948-5.jpg",
-      "name": "Rani Pink Kancheepuram Soft Silk Saree",
-      "price": "12,050.00",
-      "des":
-          "Rani Pink Kancheepuram Soft Silk Saree Designer Butta On The Body and Without border. Includes Unstitched blouse",
-      "left": "Only 1 left in stock"
-    },
-    {
-      "id": "2",
-      "img": "https://seematti.com/wp-content/uploads/2024/04/13588986-5.jpg",
-      "name": "Peacock Blue Kancheepuram Soft Silk Saree",
-      "price": "13,365.00",
-      "des":
-          "Peacock Blue Kancheepuram Soft Silk Saree Lines On The Body and Designer border. Includes Unstitched blouse",
-      "left": "Only 5 left in stock"
-    },
-    {
-      "id": "3",
-      "img": "https://seematti.com/wp-content/uploads/2024/04/13588991-5.jpg",
-      "name": "Peacock Blue Kancheepuram Soft Silk Saree",
-      "price": "11,385.00",
-      "des":
-          "Peacock Blue Kancheepuram Soft Silk Saree Designer Butta On The Body and Plain border. Includes Unstitched blouse",
-      "left": "Only 1 left in stock"
-    },
-    {
-      "id": "4",
-      "img": "https://seematti.com/wp-content/uploads/2024/04/13588949-5.jpg",
-      "name": "Pink Kancheepuram Soft Silk Saree",
-      "price": "5,761.00",
-      "des":
-          "Pink Kancheepuram Soft Silk Saree Designer  On The Body and Without border. Includes Unstitched blouse",
-      "left": "Only 2 left"
-    },
-    {
-      "id": "5",
-      "img": "https://seematti.com/wp-content/uploads/2024/04/13588971-5.jpg",
-      "name": "BPastel Lavender Kancheepuram Soft Silk Saree",
-      "price": "12,050.00",
-      "des":
-          "Pastel Lavender Kancheepuram Soft Silk Saree Designer Butta On The Body and Without border. Includes Unstitched blouse",
-      "left": "Only 4 left"
-    },
-  ];
+  // static List<Map> shopItems1 = [
+  //   {
+  //     "id": "1",
+  //     "img": "https://seematti.com/wp-content/uploads/2024/04/13588948-5.jpg",
+  //     "name": "Rani Pink Kancheepuram Soft Silk Saree",
+  //     "price": "12,050.00",
+  //     "des":
+  //         "Rani Pink Kancheepuram Soft Silk Saree Designer Butta On The Body and Without border. Includes Unstitched blouse",
+  //     "left": "Only 1 left in stock"
+  //   },
+  //   {
+  //     "id": "2",
+  //     "img": "https://seematti.com/wp-content/uploads/2024/04/13588986-5.jpg",
+  //     "name": "Peacock Blue Kancheepuram Soft Silk Saree",
+  //     "price": "13,365.00",
+  //     "des":
+  //         "Peacock Blue Kancheepuram Soft Silk Saree Lines On The Body and Designer border. Includes Unstitched blouse",
+  //     "left": "Only 5 left in stock"
+  //   },
+  //   {
+  //     "id": "3",
+  //     "img": "https://seematti.com/wp-content/uploads/2024/04/13588991-5.jpg",
+  //     "name": "Peacock Blue Kancheepuram Soft Silk Saree",
+  //     "price": "11,385.00",
+  //     "des":
+  //         "Peacock Blue Kancheepuram Soft Silk Saree Designer Butta On The Body and Plain border. Includes Unstitched blouse",
+  //     "left": "Only 1 left in stock"
+  //   },
+  //   {
+  //     "id": "4",
+  //     "img": "https://seematti.com/wp-content/uploads/2024/04/13588949-5.jpg",
+  //     "name": "Pink Kancheepuram Soft Silk Saree",
+  //     "price": "5,761.00",
+  //     "des":
+  //         "Pink Kancheepuram Soft Silk Saree Designer  On The Body and Without border. Includes Unstitched blouse",
+  //     "left": "Only 2 left"
+  //   },
+  //   {
+  //     "id": "5",
+  //     "img": "https://seematti.com/wp-content/uploads/2024/04/13588971-5.jpg",
+  //     "name": "BPastel Lavender Kancheepuram Soft Silk Saree",
+  //     "price": "12,050.00",
+  //     "des":
+  //         "Pastel Lavender Kancheepuram Soft Silk Saree Designer Butta On The Body and Without border. Includes Unstitched blouse",
+  //     "left": "Only 4 left"
+  //   },
+  // ];
 
+  // bool isLoading1 = false;
+  // List cartItems1 = [];
 
- List kanchipuramCartItem = [];
-  get kanchipuram => kanchipuramList;
-  get kanchipuramCart => kanchipuramCartItem;
+  // get shopItemList1 => shopItems1;
+  // get cartItemList1 => cartItems1;
 
-  void addToCart(int index, BuildContext context) {
-    kanchipuramCartItem.add(kanchipuramList[index]);
+  // void addToCart1(int index, BuildContext context) {
+  //   cartItems.add(shopItems[index]);
 
-    isLoading = true;
-    notifyListeners();
-  }
+  //   isLoading = true;
+  //   notifyListeners();
+  // }
 
-  void deleteItem1(int index) {
-    isLoading = true;
-    kanchipuramCartItem.removeAt(index);
-    notifyListeners();
-  }
+  // void deleteItem1(int index) {
+  //   isLoading = true;
+  //   cartItems.removeAt(index);
+  //   notifyListeners();
+  // }
 }

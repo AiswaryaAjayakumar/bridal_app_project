@@ -129,7 +129,7 @@ class _BanarasiCategoryState extends State<BanarasiCategory> {
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
                 scrollDirection: Axis.vertical,
-                itemCount: value.banarasi.length,
+                itemCount: value.shopItemList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 15,
                     mainAxisExtent: 380,
@@ -142,11 +142,11 @@ class _BanarasiCategoryState extends State<BanarasiCategory> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DetailedDress(
-                              img: value.banarasi[index]["img"],
-                              name: value.banarasi[index]["name"],
-                              des: value.banarasi[index]["des"],
-                              price: value.banarasi[index]["price"],
-                              left: value.banarasi[index]["left"],
+                              img: value.shopItemList[index]["img"],
+                              name: value.shopItemList[index]["name"],
+                              des: value.shopItemList[index]["des"],
+                              price: value.shopItemList[index]["price"],
+                              left: value.shopItemList[index]["left"],
                               onSavePressed: () {
                                 Provider.of<CartScreenController>(context,
                                         listen: false)
@@ -185,7 +185,7 @@ class _BanarasiCategoryState extends State<BanarasiCategory> {
                             child: Column(
                               children: [
                                 CachedNetworkImage(
-                                  imageUrl: value.banarasi[index]["img"],
+                                  imageUrl: value.shopItemList[index]["img"],
                                   placeholder: (context, url) =>
                                       ReUsableLoading(),
                                   errorWidget: (context, url, error) =>
@@ -205,7 +205,7 @@ class _BanarasiCategoryState extends State<BanarasiCategory> {
                                   child: Column(
                                     children: [
                                       Text(
-                                        value.banarasi[index]["name"],
+                                        value.shopItemList[index]["name"],
                                         style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold),
@@ -220,7 +220,7 @@ class _BanarasiCategoryState extends State<BanarasiCategory> {
                                             size: 17,
                                           ),
                                           Text(
-                                            value.banarasi[index]["price"],
+                                            value.shopItemList[index]["price"],
                                             style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500),
