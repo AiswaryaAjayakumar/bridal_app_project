@@ -195,15 +195,28 @@ class _CartScreenState extends State<CartScreen> {
                           TextButton(
                               onPressed: () {
                                 Navigator.pop(context);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CartScreen(),
+                                    ));
                               },
                               child: Text("Cancel")),
                           TextButton(
                               onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => ConfirmTrial(),
-                                    ));
+                                if (dateController.text.isNotEmpty) {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ConfirmTrial(),
+                                      ));
+                                } else {
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                    content: Text("Please Select Date"),
+                                    backgroundColor: Colors.red,
+                                  ));
+                                }
                               },
                               child: Text("Confirm"))
                         ],
