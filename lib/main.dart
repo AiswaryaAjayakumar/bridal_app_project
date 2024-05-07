@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable
 
 import 'package:bridal_app_project/controller/cart_screen_controller.dart';
-import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
 import 'package:bridal_app_project/view/splash_screen/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

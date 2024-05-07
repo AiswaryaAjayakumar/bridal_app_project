@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, must_be_immutable
 
-import 'package:bridal_app_project/utils/image_constants.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
-import 'package:bridal_app_project/view/home_screen/widgets/carousel_slide_screen.dart';
 import 'package:flutter/material.dart';
 
 class DetailsCategoryScreen extends StatefulWidget {

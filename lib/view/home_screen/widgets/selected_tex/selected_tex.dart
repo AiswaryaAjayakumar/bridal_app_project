@@ -2,16 +2,10 @@
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bridal_app_project/controller/cart_screen_controller.dart';
-import 'package:bridal_app_project/utils/image_constants.dart';
-import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 
-import 'package:bridal_app_project/view/home_screen/widgets/carousel_slide_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/selected_categories/banarasi_category.dart';
-import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/selected_categories/kanchipuram_category.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/selected_container.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class Selected_Tex extends StatefulWidget {
   const Selected_Tex({

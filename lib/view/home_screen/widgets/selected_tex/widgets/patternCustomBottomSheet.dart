@@ -1,3 +1,5 @@
+
+
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
@@ -34,7 +36,7 @@ class _PatternCustomBottomSheetState extends State<PatternCustomBottomSheet> {
   void initState() {
     len = patternList.length;
     selectedIdex = List.generate(len!, (index) => false);
-    print(selectedIdex);
+   // print(selectedIdex);
     super.initState();
   }
 

@@ -4,7 +4,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class ConfirmTrial extends StatefulWidget {
   const ConfirmTrial({super.key});

@@ -5,7 +5,6 @@ import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_co
 import 'package:bridal_app_project/view/home_screen/home_screen.dart';
 import 'package:bridal_app_project/view/home_screen/widgets/selected_tex/widgets/cart_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:favorite_button/favorite_button.dart';
 
 import 'package:flutter/material.dart';

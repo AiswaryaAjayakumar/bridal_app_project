@@ -34,7 +34,7 @@ class _ColorCustomBottomSheetState extends State<ColorCustomBottomSheet> {
   void initState() {
     len = colorList.length;
     selectedIdex = List.generate(len!, (index) => false);
-    print(selectedIdex);
+    // print(selectedIdex);
     super.initState();
   }
 

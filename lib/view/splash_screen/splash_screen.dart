@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, annotate_overrides
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, annotate_overrides, must_be_immutable
 
 import 'dart:async';
 
 import 'package:bridal_app_project/utils/starting_pages_colors/starting_pages_color_constants.dart';
 import 'package:bridal_app_project/view/bottom_navigation/bottom_nav.dart';
-import 'package:bridal_app_project/view/home_screen/home_screen.dart';
 
 import 'package:bridal_app_project/view/sign_page/sign_page_screen.dart';
 
